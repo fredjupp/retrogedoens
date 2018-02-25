@@ -1,0 +1,10 @@
+[Unit]
+Description=The LED MAtrix show
+
+[Service]
+PIDFile = /home/pi/run/runall.pid
+ExecStart = /sbin/runuser -u pi /home/pi/bin/runall.sh
+ExecStop = /sbin/runuser -u pi /home/pi/bin/killall.sh
+
+[Install]
+WantedBy = multi-user.target
