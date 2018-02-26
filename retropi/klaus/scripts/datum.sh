@@ -5,7 +5,7 @@ export PATH
 sleeptime=${1:-30}
 while true
 do
-  gawk 'BEGIN{printf "%s ",strftime("%d:%m:%Y %H:%M:%S" ,systime())}'
+  gawk 'BEGIN{printf "%s ",strftime("%d-%m-%Y %H:%M:%S" ,systime())}'
   sleep $sleeptime
 done
 
