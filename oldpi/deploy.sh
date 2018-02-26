@@ -5,8 +5,6 @@ hdir="/home/pi"
 sudo rsync -av ./system/myled.service     /etc/systemd/system/
 sudo rsync -av ./etc/rsyslog.d/myled.conf /etc/rsyslog.d/
 sudo rsync -av ./etc/rsyslog.conf         /etc/
-rsync -av ./system/runcommand-onstart.sh  /opt/retropie/configs/all/
-rsync -av ./system/runcommand-onend.sh    /opt/retropie/configs/all/
 rsync -av ./klaus/*                       ${hdir}/klaus/
 rsync -av ./bin/killall.sh                ${hdir}/bin/
 rsync -av ./bin/runall.sh                 ${hdir}/bin/
