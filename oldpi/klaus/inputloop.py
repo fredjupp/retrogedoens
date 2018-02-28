@@ -41,7 +41,8 @@ while True:
 
     if input:
         print(input);
-        myfont=random.choice(["CP437_FONT", "TINY_FONT", "SINCLAIR_FONT", "LCD_FONT", "UKR_FONT", "SEG7_FONT"])
+        #myfont=random.choice(["CP437_FONT", "TINY_FONT", "SINCLAIR_FONT", "LCD_FONT", "UKR_FONT", "SEG7_FONT"])
+        myfont=random.choice(["CP437_FONT", "TINY_FONT", "SINCLAIR_FONT", "LCD_FONT", "SEG7_FONT"])
         mynum=random.uniform(.005, .06 );
         mybrightness=random.randint(1,255);
         input.strip()
