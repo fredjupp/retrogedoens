@@ -7,4 +7,5 @@
 #      $4 - the full command line used to launch the emulator.
 # install to: /opt/retropie/configs/all
 # output info about game on LED
+rm -f /tmp/nowplaying 2>/dev/null
 echo "End of  - $1 : $(basename $3) - Emulator: $2" | logger -t MYLED

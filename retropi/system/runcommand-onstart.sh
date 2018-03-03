@@ -8,3 +8,4 @@
 # install to: /opt/retropie/configs/all
 # output info about game on LED
 echo "Starting  - $1 : $(basename $3) - Emulator: $2" | logger -t MYLED
+echo "Playing - $1 : $(basename $3) - Emulator: $2" > /tmp/nowplaying

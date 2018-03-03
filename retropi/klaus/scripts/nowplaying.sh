@@ -6,6 +6,10 @@ sleeptime=${1:-30}
 echo $sleeptime
 while true
 do
-  ps -ef | awk '/awk/{next}/runcommand/{a=$NF;i=split(a,b,"/");printf "Playing: % ",b[i];exit}'
+  if [ -r /tmp/nowplaying ];then
+    cat /tmp/nowplaying
+  else
+    ps -ef | awk '/awk/{next}/runcommand/{a=$NF;i=split(a,b,"/");printf "Playing: %s ",b[i];exit}'
+  fi
   sleep $sleeptime
 done
