@@ -2,14 +2,15 @@
 # deploy file from repo to their inteded destination
 hdir="/home/pi"
 #copy files
-sudo rsync -av ./system/myled.service     /etc/systemd/system/
-sudo rsync -av ./etc/rsyslog.d/myled.conf /etc/rsyslog.d/
-sudo rsync -av ./etc/rsyslog.conf         /etc/
-rsync -av ./system/runcommand-onstart.sh  /opt/retropie/configs/all/
-rsync -av ./system/runcommand-onend.sh    /opt/retropie/configs/all/
-rsync -av ./klaus/*                       ${hdir}/klaus/
-rsync -av ./bin/killall.sh                ${hdir}/bin/
-rsync -av ./bin/runall.sh                 ${hdir}/bin/
+RSYNC_OPTS="-av -c "
+sudo rsync ${RSYNC_OPTS} ./system/myled.service     /etc/systemd/system/
+sudo rsync ${RSYNC_OPTS} ./etc/rsyslog.d/myled.conf /etc/rsyslog.d/
+sudo rsync ${RSYNC_OPTS} ./etc/rsyslog.conf         /etc/
+rsync ${RSYNC_OPTS} ./system/runcommand-onstart.sh  /opt/retropie/configs/all/
+rsync ${RSYNC_OPTS} ./system/runcommand-onend.sh    /opt/retropie/configs/all/
+rsync ${RSYNC_OPTS} ./klaus/*                       ${hdir}/klaus/
+rsync ${RSYNC_OPTS} ./bin/killall.sh                ${hdir}/bin/
+rsync ${RSYNC_OPTS} ./bin/runall.sh                 ${hdir}/bin/
 # adjust permissions
 chmod  755 ${hdir}/bin/* ${hdir}/klaus/* /opt/retropie/configs/all/runcommand-on*.sh
 sudo chown root:root /etc/systemd/system/myled.service  /etc/rsyslog.d/myled.conf
